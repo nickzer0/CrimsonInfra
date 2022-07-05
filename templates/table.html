@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>  
+</head>
+   <body>
+  <div>
+<table>
+<tr>
+<th>Type</th>
+<th>ID</th>
+<th>Hostname</th>
+<th>IP</th>
+<th>Status</th>
+</tr>
+<tr>
+{% for row in rows %}
+<td>{{ row.type }}</td>
+<td>{{ row.id }}</td>
+<td>{{ row.hostname }}</td>
+<td>{{ row.ip }}</td>
+<td>{{ row.status }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+  </div>
+
+   </body>
+</html> 

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<form method="POST" action="/modify" id="modify">
+<select class="bttn" name="id">
+{% for row in rows %}
+<option value="{{row.id}}" SELECTED>{{row.id}}</option>
+{% endfor %}
+</select>
+
+<input type="submit" name="action" value="Destroy" class="bttn"/>
+<input type="submit" name="action" value="Rebuild" class="bttn"/>
+<script>
+$(function(){
+$("#modify").on("submit", function(e){
+    e.preventDefault();
+    $.ajax({
+        url: '$(this).attr("action"),
+        type: 'POST',
+        data: $(this).serialize(),
+        success:setTimeout(function(){
+                location.reload();}, 5000);
+        }
+    });
+});
+});
+</script>
+
+
+</form>
+</html>
